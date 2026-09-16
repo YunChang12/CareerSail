@@ -756,9 +756,11 @@ body.ext-mode .status-tabs{margin-bottom:12px}
 .ext-row-favorited td.ext-actions{background:var(--surface)}
 
 /* v5.1: 顶部横向拖动条 — 与表格横向滚动双向同步，表格不溢出时自动隐藏 */
+/* v5.4: 改为吸顶（sticky），长表格滚动时顶部拖动条常驻视口顶部，不用滚到底部再拖 */
 .ext-hscroll-top{
   height:10px;background:var(--bg-alt);border:1px solid var(--border-light);
-  border-radius:5px;margin-bottom:6px;position:relative;display:none;
+  border-radius:5px;margin:4px 0 6px;position:sticky;top:0;z-index:5;
+  box-shadow:0 1px 4px rgba(0,0,0,0.06);display:none;
 }
 .ext-hscroll-top.visible{display:block}
 .ext-hscroll-thumb{

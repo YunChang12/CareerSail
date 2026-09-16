@@ -3,7 +3,7 @@
   "_usage": "可改成任何飞书 Base 链接：用 `lark-cli base +url-resolve --url '<飞书Base链接>' --as user` 获取 base_token；字段映射适配「26年【秋招/春招/实习】汇总表」",
   "base_token": "WNcRbTcsSaUi2usaKu8csm1qnU2",
   "table_id": "tbl9Z9a9ynA7Pagk",
-  "source_name": "26年【秋招/春招/实习】汇总表（持续更新）",
+  "source_name": "秋招公司库",
   "source_url": "https://gcn14f8b1xu1.feishu.cn/base/WNcRbTcsSaUi2usaKu8csm1qnU2?table=tbl9Z9a9ynA7Pagk&view=vewFArTk4K",
   "auto_sync_on_startup": true,
   "sync_interval_hours": 6,
@@ -25,5 +25,6 @@
     "简历投递链接": "career_url",
     "公告链接": "notice_url",
     "备注": "remark"
-  }
+  },
+  "min_updated_at": "2026-07-01"
 }
