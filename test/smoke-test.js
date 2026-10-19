@@ -112,8 +112,8 @@ async function run() {
   // 3. 检查 package.json 无 Playwright 依赖
   console.log('  [3/9] 检查 package.json...');
   const pkg = JSON.parse(fs.readFileSync(path.join(__dirname, '..', 'package.json'), 'utf-8'));
-  assert(!pkg.dependencies || !pkg.dependencies.playwright, 'package.json 无 Playwright 依赖');
-  assert(Object.keys(pkg.dependencies || {}).length === 0, 'package.json 零依赖');
+  assert(!pkg.dependencies || !pkg.dependencies.playwright, '基础看板无强制 Playwright 依赖');
+  assert(Object.keys(pkg.dependencies || {}).length === 0, '基础看板无强制依赖（自动填写使用可选 Playwright）');
 
   // 4. 检查 server.js 代码质量
   console.log('  [4/9] 检查 server.js 代码...');

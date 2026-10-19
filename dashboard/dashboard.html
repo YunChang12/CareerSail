@@ -2074,6 +2074,7 @@ function buildJobCard(job, idx, isExcluded) {
         ${favBtn}
         ${link ? `<a href="${link}" target="_blank" rel="noopener noreferrer" class="job-link" onclick="event.stopPropagation()">🔗 网申</a>` : ''}
         ${link ? `<button class="btn btn-outline btn-xs resume-gen-btn" onclick="event.stopPropagation();copyResumePrompt(${parseInt(job._rowIndex)})">📝 生成简历</button>` : ''}
+        ${link && /^https:\/\/ubtrobot\.zhiye\.com\/campus\/detail\?/.test(link) ? `<button class="btn btn-outline btn-xs" onclick="event.stopPropagation();openAutofill(${parseInt(job._rowIndex)})">自动填写</button>` : ''}
         ${stageSelect}
         <button class="btn btn-ghost btn-xs" onclick="openEditModal(${parseInt(job._rowIndex)})">✎ 编辑</button>
         ${job.status === 'Pending' ? `<button class="btn btn-outline btn-xs" onclick="markSubmitted(${parseInt(job._rowIndex)})">✓ 已投</button>` : ''}
@@ -4003,5 +4004,6 @@ document.addEventListener('click', e => {
 // ========== Start ==========
 init();
 </script>
+<script src="autofill.js"></script>
 </body>
 </html>

@@ -773,9 +773,11 @@ function importBatchToCSV(jobs) {
 }
 
 // ========== Server ==========
+const autofill = require('../lib/autofill/service').createAutofill(PROJECT_ROOT);
 const server = http.createServer(async (req, res) => {
   const url = new URL(req.url, `http://localhost:${PORT}`);
   const method = req.method;
+  if (await autofill.handle(req, res, url)) return;
 
   // CORS preflight
   if (method === 'OPTIONS') {
